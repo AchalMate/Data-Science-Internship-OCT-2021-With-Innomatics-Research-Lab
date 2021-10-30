@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+History
+{% endblock title %}
+
+{% block body%}
+<br> Lets view the Shortener URL of the long original url<br><br><br>
+<table style="width:100%">
+  <tr>
+
+    <th>Shortener URL</th>
+      <th>Original URL</th>
+
+  {% for row in data %}
+    <tr>
+      <td><a href = "{{ row[1] }}"  target=”_blank”>{{ row[0]|tojson|safe }}</a></td>
+      <td><a href = "{{ row[1] }}"  target=”_blank”>{{ row[1] }}</a></td>
+    </tr>
+{% endfor %}
+
+</table>
+
+{% endblock body%}

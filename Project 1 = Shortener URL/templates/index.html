@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body%}
+
+<br><br><br>
+<div class="container-fluid">
+<form method = 'post',id="shorturl">
+
+   <div class="form-group row">
+       <div class="col-sm-2">
+        <label>Original URL </label>
+    </div>
+       <div class="col-sm-7">
+                <input type="text" class="form-control" name ="originalurl"  placeholder = 'Enter the original URL' value = {% for key in original %}{{key}}{% endfor%}>
+    </div>
+        <div class="col-sm-3">
+      <button type="submit" class="btn btn-primary mb-2"> Shortener</button>
+    </div>
+  </div>
+
+</form>
+    <form>
+        <div class="form-group row">
+       <div class="col-sm-2">
+        <label> Shortener URL </label>
+    </div>
+       <div class="col-sm-7">
+                <input type="text"  class="form-control" name ="shortener"  value = {% for key in ans %}{{key}}{% endfor%} >
+    </div>
+        <div class="col-sm-3">
+      <button type="submit" class="btn btn-primary mb-2">Copy</button>
+    </div>
+  </div>
+    </form>
+</div>
+
+</div>
+{% endblock %}
+
